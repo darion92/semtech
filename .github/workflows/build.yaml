@@ -27,8 +27,6 @@ jobs:
           name: jar-artifact
           path: ${{ github.workspace }}/target/*.jar
           retention-days: 1
-      - name: Test
-        run: ls ${{ github.workspace }}/target
       - uses: actions/download-artifact@v1
         with:
           name: jar-artifact
