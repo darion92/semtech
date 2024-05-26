@@ -25,10 +25,10 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: jar-artifact
-          path: ${{ github.workspace }}/semtech/target/*.jar
+          path: ${{ github.workspace }}/target/*.jar
           retention-days: 1
       - name: Test
-        run: ls ${{ github.workspace }}
+        run: ls ${{ github.workspace }}/target
       - uses: actions/download-artifact@v1
         with:
           name: jar-artifact
