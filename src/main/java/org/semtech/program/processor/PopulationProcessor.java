@@ -70,7 +70,7 @@ public class PopulationProcessor {
         StringBuilder stringBuilder = new StringBuilder();
         AtomicInteger smallestPopulation = new AtomicInteger(Integer.MAX_VALUE);
         AtomicReference<String> departmentWithSmallestPopulation = new AtomicReference<>("");
-        departmentMap.values().stream().forEach(department -> {
+        departmentMap.values().forEach(department -> {
             stringBuilder.append("Department name : "+ department.getName() +
                     " || Total population : "+department.getTotalPopulation() +
                     " || City with largest population : " + department.getCityPopulationMap().keySet().stream().findFirst().orElse("") + "\n");
