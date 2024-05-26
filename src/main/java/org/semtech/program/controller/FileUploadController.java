@@ -26,7 +26,7 @@ public class FileUploadController {
             throws IOException, CsvValidationException {
         String output = populationProcessor.processPopulation(multipartFile);
         log.info(output);
-        //if the output gets bigger, better to log the file.
+        //if the output gets bigger, better to log the output.
         return new ResponseEntity<>(output, HttpStatus.OK);
     }
 }
