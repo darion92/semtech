@@ -8,8 +8,6 @@ on:
   # run it on push to the default repository branch
   push:
     branches: [main]
-  # run it during pull request
-  pull_request:
 
 jobs:
   # define job to build and publish docker image
@@ -21,7 +19,11 @@ jobs:
     # steps to perform in job
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
+      - uses: actions/download-artifact@v1
+        with:
+          name: jar-artifact
+          path: target/
 
       # setup Docker buld action
       - name: Set up Docker Buildx
