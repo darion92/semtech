@@ -27,9 +27,9 @@ jobs:
           path: ${{ github.workspace }}/semtech/target/*.jar
           retention-days: 1
       - uses: actions/download-artifact@v1
-          with:
-            name: jar-artifact
-            path: target/
+        with:
+          name: jar-artifact
+          path: target/
       # setup Docker buld action
       - name: Set up Docker Buildx
         id: buildx
