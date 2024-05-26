@@ -1,6 +1,10 @@
 name: Build Docker image and Publish
 
 on:
+  workflow_run:
+    workflows: [ "Build" ]
+    types:
+      - completed
   # run it on push to the default repository branch
   push:
     branches: [main]
